@@ -160,11 +160,24 @@ h4 {
     flex-direction: row;
     justify-content: center;
     gap: 60px;
-    color: var(--black);
-    border-color: var(--black);
+    color: black;
+    border-color: black;
 }
 
 strong {
     color: var(--blue2);
     font-weight: bolder;
 }
+
+.Essência {
+    background-color: white;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 900px;
+}
+
+
