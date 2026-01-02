@@ -16,7 +16,7 @@ body{
 }
 
 header{
-    background-color: rgb(135, 10, 10);
+    background-color: rgb(103, 4, 4);
     display: flex;
     justify-content: space-around;
     align-items: center;
