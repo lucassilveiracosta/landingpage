@@ -127,9 +127,11 @@ h4 {
 
 
 .Inicio {
+    background-color: rgba(0, 0, 0, 0.7); /* A "tinta" que vai escurecer */
     background-image: url(images/tajmahal.jpg);
     background-size: cover;
-    filter: brightness(50%);
+    background-position: center;
+    background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
