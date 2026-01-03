@@ -128,7 +128,7 @@ h4 {
 
 .Inicio {
     background-color: white;
-    background-image: linear-gradient(rgba( 0, 0, 0, 0.6), rgba( 0, 0, 0, 0.6)), url(tajmahal.jpg);
+    background-image: linear-gradient(rgba( 0, 0, 0, 0.6), rgba( 0, 0, 0, 0.6)), url(/tajmahal.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
