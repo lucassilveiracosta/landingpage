@@ -178,6 +178,7 @@ strong {
     flex-wrap: wrap;
     display: flex;
     padding: 5px;
+    background-color: white;
     
 }
 
@@ -208,4 +209,71 @@ strong {
     margin: 50px;
 }
 
+body, section {
+  margin: 0;
+  padding: 0;
+}
+
+.transicao {
+    width: 100%;    
+    height: 150px;  
+    background: linear-gradient(to bottom, #ffffff, #c59f9f);
+    margin: 0;      
+}
+.Contatos {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;     
+    align-items: stretch; 
+    padding: 40px 20px;
+    background-color: #c59f9f;
+}
+
+.mapa-box {
+    flex: 2;            
+    min-width: 300px;   
+    padding-right: 10px;
+}
+
+.mapa-box iframe {
+    width: 100%;        
+    height: 100%;       
+    min-height: 400px;
+    border-radius: 8px;
+}
+
+.info-box {
+    flex: 1;            
+    min-width: 300px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.info-box > h2 {
+    color: rgb(103, 4, 4);
+}
+
+footer {
+    background-color: rgb(103, 4, 4);
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+    min-height: 50px;
+}
+
+footer > div  {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+footer > div > p {
+    color: rgb(255, 255, 255);
+    font-weight: sans-serif;
+}
 
