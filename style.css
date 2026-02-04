@@ -7,7 +7,7 @@
     --bg-creme: #fffaf3;
     --text-dark: #2c2c2c;
     --text-muted: #666666;
-    --section-padding: 120px; /* Definindo um padrão de respiro */
+    --section-padding: 120px;
 }
 
 * {
@@ -22,6 +22,7 @@ body {
     font-family: 'Lato', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -77,19 +78,19 @@ nav { display: flex; gap: 3rem; }
 .nav-links:hover::after { width: 100%; }
 .nav-links:hover { color: var(--gold); }
 
-/* SEÇÃO INÍCIO */
 .Inicio {
     position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("images/tajmahal.jpg");
     background-size: cover;
-    background-position: -1px -10px;
-    background-attachment: fixed;
+    background-position: -1px -10px; 
+    background-attachment: fixed; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
     color: var(--white);
+    padding: 20px;
 }
 
 .Inicio h2 {
@@ -117,13 +118,12 @@ nav { display: flex; gap: 3rem; }
     60% {transform: translateY(-5px);}
 }
 
-/* SEÇÃO ESSÊNCIA (SOBRE) - EMBELEZADA */
+/* SEÇÃO ESSÊNCIA */
 .Essência {
     padding: var(--section-padding) 20px;
-    background: 
-        linear-gradient(rgba(255, 250, 243, 0.9), rgba(255, 250, 243, 0.9)),
-        url('https://www.transparenttextures.com/patterns/mandala.png'),
-        var(--bg-creme);
+    background: linear-gradient(rgba(255, 250, 243, 0.9), rgba(255, 250, 243, 0.9)),
+                url('https://www.transparenttextures.com/patterns/mandala.png'),
+                var(--bg-creme);
     text-align: center;
 }
 
@@ -269,14 +269,6 @@ nav { display: flex; gap: 3rem; }
     border: 1px solid #eee;
     background: #fcfcfc;
     border-radius: 12px;
-    font-family: inherit;
-    transition: 0.3s;
-}
-
-.contato-form input:focus, .contato-form textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: white;
 }
 
 .contato-form button {
@@ -288,14 +280,6 @@ nav { display: flex; gap: 3rem; }
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.4s;
-    margin-top: 10px;
-}
-
-.contato-form button:hover {
-    background-color: var(--gold);
-    transform: translateY(-2px);
 }
 
 /* FOOTER */
@@ -311,59 +295,41 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 60px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding-bottom: 60px;
 }
-
-.footer-brand .img-logo-footer {
-    max-width: 80px;
-    margin-bottom: 25px;
-}
-
-.footer-brand h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: var(--gold);
-}
-
-.footer-links h4, .footer-social h4 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 30px;
-    color: var(--white);
-    letter-spacing: 2px;
-}
-
-.footer-links ul { list-style: none; }
-.footer-links ul li { margin-bottom: 15px; }
-.footer-links ul li a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: 0.3s;
-}
-.footer-links ul li a:hover { color: var(--gold); padding-left: 8px; }
-
-.social-icons { display: flex; gap: 25px; }
-.social-icons a { color: white; transition: 0.4s; }
-.social-icons a:hover { color: var(--gold); transform: scale(1.2); }
 
 .footer-bottom {
     text-align: center;
     padding-top: 40px;
     font-size: 0.85rem;
     color: rgba(255,255,255,0.3);
-    letter-spacing: 1px;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 992px) {
-    header { padding: 20px 40px; }
+/* --- RESPONSIVIDADE FINAL --- */
+
+@media (max-width: 1024px) {
+    :root { --section-padding: 80px; }
+    header { padding: 25px 40px; }
     .container-contato { grid-template-columns: 1fr; }
-    .form-info-box { padding: 40px; }
+    
+    /* Desativa paralaxe em telas médias para evitar bugs de posição */
+    .Inicio { background-attachment: scroll; }
 }
 
 @media (max-width: 768px) {
     nav { display: none; }
     .Essência h2 { font-size: 2.5rem; }
     .Inicio h2 { font-size: 3rem; }
+    
+    /* Garante que o monumento fique no centro em telas verticais */
+    .Inicio { background-position: center center; }
+}
+
+@media (max-width: 480px) {
+    :root { --section-padding: 60px; }
+    .box-img-header { font-size: 1.4rem; }
+    .Inicio h2 { font-size: 2.2rem; }
+    .Essência h2 { font-size: 2.2rem; }
+    
+    /* Reduz um pouco a altura para telas muito pequenas */
+    .Inicio { min-height: 60vh; background-position: center center; }
 }
